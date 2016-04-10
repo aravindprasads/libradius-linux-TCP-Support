@@ -1,0 +1,101 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on https://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/github-dark.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Libradius-linux-tcp-support</title>
+  <meta name="description" content="TCP Support for Libradius">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Libradius-linux-tcp-support</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">TCP Support for Libradius</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/prasad90/libradius-linux-TCP-Support/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/prasad90/libradius-linux-TCP-Support/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/prasad90/libradius-linux-TCP-Support" class="code">View Libradius-linux-tcp-support on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a id="libradius-linux-tcp-support" class="anchor" href="#libradius-linux-tcp-support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>libradius-linux TCP support</h1>
+
+<p>This is a fork of libradius-linux repo - <a href="https://github.com/speakinghedge/libradius-linux">https://github.com/speakinghedge/libradius-linux</a> (LINUX port of recent (juniper)-libradius offered by FreeBSD.) </p>
+
+<p>Cause:</p>
+
+<p>Libradius supports only UDP as transport protocol for RADIUS Messages. Recently, RADIUS Servers have started supporting TCP. Hence, added support for using TCP in Libradius. </p>
+
+<p>Samples:</p>
+
+<blockquote>
+<p>Sample RADIUS Client File - src/tcp-client.c</p>
+
+<p>radius.conf file - src/radius.conf file</p>
+</blockquote>
+
+<p>Synopsis of Changes made:</p>
+
+<p>1) radius.conf file:</p>
+
+<pre><code>&gt; Actual radius.conf provided by libradius - http://www.freebsd.org/cgi/man.cgi?query=radius.conf 
+&gt; Now, radius.conf file should include the Transport protocol type to be used (TCP/UDP):
+    &gt;&gt; Include it as Fourth Field in radius.conf file. 
+        auth  auth.domain.com:1645   "I can't see you" tcp 5 4 
+    &gt;&gt; Hence, currently we have 4 compulsory parameters in radius.conf file - Service type, Server host, Shared secret, Transport Protocol Type.
+
+&gt; Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
+    &gt;&gt; rad_add_server (struct rad_handle *h, const  char *host, int port, const char *secret, int timeout, int max_tries, char *protocol)
+    &gt;&gt; rad_add_server_ex (struct rad_handle *h, const   char *host, int port, const char *secret, int timeout, int max_tries, char *protocol)
+&gt; Pass the following strings for specifying the Transport Protocol type. 
+    &gt;&gt; "udp" for UDP protocol
+    &gt;&gt; "tcp" for TCP Protocol
+</code></pre>
+
+<p>2) Reason for forced change in Standard radius.conf file: </p>
+
+<pre><code>&gt; Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
+&gt; Needed to add Transport Protocol as the fourth parameter so that rest of parameters behind it remain optional as previously existed. 
+</code></pre>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/prasad90" class="avatar"><img src="https://avatars3.githubusercontent.com/u/6022784?v=3&amp;s=60" width="48" height="48"></a> <a href="https://github.com/prasad90">prasad90</a> maintains <a href="https://github.com/prasad90/libradius-linux-TCP-Support">Libradius-linux-tcp-support</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/prasad90/libradius-linux-TCP-Support/tarball/master" class="tar">tar</a><a href="https://github.com/prasad90/libradius-linux-TCP-Support/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
