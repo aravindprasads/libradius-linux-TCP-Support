@@ -23,15 +23,15 @@ Synopsis of Changes made:
 			auth  auth.domain.com:1645	 "I can't see you" tcp 5 4 
 		>> Hence, currently we have 4 compulsory parameters in radius.conf file - Service type, Server host, Shared secret, Transport Protocol Type.
 	
-	> Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
-		>> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
-		>> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
-	> Pass the following strings for specifying the Transport Protocol type. 
+2) Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
+	> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+	> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+	> Pass the following strings for specifying the Transport Protocol type for the "protocol" parameter in above APIs 
 		>> "udp" for UDP protocol
 		>> "tcp" for TCP Protocol
 		
 		
-2) Reason for forced change in Standard radius.conf file: 
+Reason for forced change in Standard radius.conf file: 
 
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
 	> Needed to add Transport Protocol as the fourth parameter so that rest of parameters behind it remain optional as previously existed. 
