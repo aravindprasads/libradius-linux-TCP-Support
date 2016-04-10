@@ -7,11 +7,11 @@ Cause:
 
 Libradius supports only UDP as transport protocol for RADIUS Messages. Recently, RADIUS Servers have started supporting TCP. Hence, added support for using TCP in Libradius. 
 
-Samples:
+Sample Files:
 
-> Sample RADIUS Client File - src/tcp-client.c
+> RADIUS Client File - src/tcp-client.c
 
-> radius.conf file - src/radius.conf file
+> radius.conf file - src/radius.conf 
 
 Synopsis of Changes made:
 
