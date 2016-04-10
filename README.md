@@ -25,6 +25,8 @@ Synopsis of Changes made:
 	
 2) Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
 
+The protocol field is appended to the already existing list of parameters in the APIs. 
+
 	> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
 	
 	> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
@@ -32,9 +34,8 @@ Synopsis of Changes made:
 	> Pass the following strings for specifying the Transport Protocol type for the "protocol" parameter in above APIs 
 		>> "udp" for UDP protocol
 		>> "tcp" for TCP Protocol
-		
-		
-Reason for forced change in Standard radius.conf file: 
+
+3) Reason for forced change in Standard radius.conf file: 
 
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
 	> Needed to add Transport Protocol as the fourth parameter so that rest of parameters behind it remain optional as previously existed. 
