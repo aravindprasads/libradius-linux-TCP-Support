@@ -24,8 +24,11 @@ Synopsis of Changes made:
 		>> Hence, currently we have 4 compulsory parameters in radius.conf file - Service type, Server host, Shared secret, Transport Protocol Type.
 	
 2) Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
+
 	> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+	
 	> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+	
 	> Pass the following strings for specifying the Transport Protocol type for the "protocol" parameter in above APIs 
 		>> "udp" for UDP protocol
 		>> "tcp" for TCP Protocol
