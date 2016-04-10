@@ -26,7 +26,7 @@ Synopsis of Changes made:
 	> Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
 		>> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
 		>> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
-	> Pass the followinf strings for specifying the Transport Protocol type. 
+	> Pass the following strings for specifying the Transport Protocol type. 
 		>> "udp" for UDP protocol
 		>> "tcp" for TCP Protocol
 		
