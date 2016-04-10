@@ -1,21 +1,29 @@
-libradius-linux
-===============
+libradius-linux TCP Support
+===========================
 
-LINUX port of recent (juniper)-libradius offered by FreeBSD.
+This is a fork of libradius-linux repo - https://github.com/speakinghedge/libradius-linux (LINUX port of recent (juniper)-libradius offered by FreeBSD.) 
 
-Cause... I needed a lightweight and simple to integrate solution for a small project.
+Cause:
+Till now, Libradius supports only UDP as transport protocol for RADIUS Messages. Now, RADIUS Servers have started supporting TCP. Hence, added support for TCP at the RADIUS Client. 
 
-There is a previous port available at http://portal-to-web.de/tacacs/libradius.php, but
-- it is a little bit outdated (2004, referenced pages are currently not available),
-- needs libdm to be installed and
-- does not use OpenSSL libs if present.
+Samples:
+Sample RADIUS Client File - src/tcp-client.c
+radius.conf file - src/radius.conf file
 
-I decided to use a more recent version from the FreeBSD git repo (f1d6f47/ Sep 21 2014) - applied changes:
-- removed / replaced FreeBSD preprocessor magic,
-- replaced BSD specific sranddev by srand(gettimeofday),
-- ships with an included md5 lib (http://openwall.info/wiki/people/solar/software/public-domain-source-code/md5) that is used if OpenSSL libs are not present (+ use common MD5_* function names) and
-- use CMAKE based build.
+Synopsis of Changes made:
+1) radius.conf file:
+	> Actual radius.conf provided by libradius - http://www.freebsd.org/cgi/man.cgi?query=radius.conf 
+	> Now, radius.conf file whould include the Transport protocol type to be used (TCP/UDP):
+		>> Include it as Fourth Field in radius.conf file. 
+			auth  auth.domain.com:1645	 "I can't see you" tcp 5 4 
+		>> Hence, currently we ave compulsory parameters in radius.conf file - Service type, Server host, Shared secret, Transport Protocol Type.
+	
+	> Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
+		>> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+		>> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+		
+2) Reason for forced change in Standard radius.conf file: 
+	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
+	> Need to add Transport Protocol as a compulsory paramter. Hence, added at fourth position in radius.conf file. 
+	
 
-Use it at your own risk and have phun!
-
-hecke
