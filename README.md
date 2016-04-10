@@ -5,7 +5,7 @@ This is a fork of libradius-linux repo - https://github.com/speakinghedge/librad
 
 Cause:
 
-Till now, Libradius supports only UDP as transport protocol for RADIUS Messages. Now, RADIUS Servers have started supporting TCP. Hence, added support for TCP at the RADIUS Client. 
+Libradius supports only UDP as transport protocol for RADIUS Messages. Recently, RADIUS Servers have started supporting TCP. Hence, added support for using TCP in Libradius. 
 
 Samples:
 
