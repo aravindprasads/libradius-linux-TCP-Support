@@ -14,6 +14,7 @@ Samples:
 > radius.conf file - src/radius.conf file
 
 Synopsis of Changes made:
+
 1) radius.conf file:
 	> Actual radius.conf provided by libradius - http://www.freebsd.org/cgi/man.cgi?query=radius.conf 
 	> Now, radius.conf file whould include the Transport protocol type to be used (TCP/UDP):
@@ -24,6 +25,7 @@ Synopsis of Changes made:
 	> Change in prototype of rad_add_server() and rad_add_server_ex() APIs. 
 		>> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
 		>> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
+		
 		
 2) Reason for forced change in Standard radius.conf file: 
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
