@@ -16,6 +16,7 @@ Samples:
 Synopsis of Changes made:
 
 1) radius.conf file:
+
 	> Actual radius.conf provided by libradius - http://www.freebsd.org/cgi/man.cgi?query=radius.conf 
 	> Now, radius.conf file whould include the Transport protocol type to be used (TCP/UDP):
 		>> Include it as Fourth Field in radius.conf file. 
@@ -28,6 +29,7 @@ Synopsis of Changes made:
 		
 		
 2) Reason for forced change in Standard radius.conf file: 
+
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
 	> Need to add Transport Protocol as a compulsory paramter. Hence, added at fourth position in radius.conf file. 
 	
