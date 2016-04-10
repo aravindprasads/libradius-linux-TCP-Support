@@ -1,4 +1,4 @@
-libradius-linux TCP Support
+libradius-linux TCP support
 ===========================
 
 This is a fork of libradius-linux repo - https://github.com/speakinghedge/libradius-linux (LINUX port of recent (juniper)-libradius offered by FreeBSD.) 
