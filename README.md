@@ -38,4 +38,5 @@ The protocol field is appended to the already existing list of parameters in the
 3) Reason for forced change in Standard radius.conf file: 
 
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
+	
 	> Needed to add Transport Protocol as the fourth parameter so that rest of parameters behind it remain optional as previously existed. 
