@@ -3,7 +3,7 @@ libradius-linux TCP support
 
 This is a fork of libradius-linux repo - https://github.com/speakinghedge/libradius-linux (LINUX port of recent (juniper)-libradius offered by FreeBSD.) 
 
-Cause:
+Need for this code:
 
 Libradius supports only UDP as transport protocol for RADIUS Messages. Recently, RADIUS Servers have started supporting TCP. Hence, added support for using TCP in Libradius. 
 
