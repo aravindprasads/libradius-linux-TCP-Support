@@ -27,6 +27,9 @@ Synopsis of Changes made:
 
 The protocol field is appended to the already existing list of parameters in the APIs. 
 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="horizontal" data-theme="dark" data-vanity="aravindprasads"><a class="LI-simple-link" href='https://in.linkedin.com/in/aravindprasads?trk=profile-badge'>Aravind Prasad S</a></div>
+
 	> rad_add_server (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
 	
 	> rad_add_server_ex (struct rad_handle *h, const	char *host, int	port, const char *secret, int timeout, int max_tries, char *protocol)
