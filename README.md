@@ -43,3 +43,8 @@ The protocol field is appended to the already existing list of parameters in the
 	> Currently, only 3 parameters are compulsory - Service type, Server host, Shared secret and the rest are optional. 
 	
 	> Needed to add Transport Protocol as the fourth parameter so that rest of parameters behind it remain optional as previously existed. 
+
+
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="aravindprasads"><a class="LI-simple-link" href='https://in.linkedin.com/in/aravindprasads?trk=profile-badge'>Aravind Prasad S</a></div>
